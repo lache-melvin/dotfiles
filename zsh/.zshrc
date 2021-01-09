@@ -7,6 +7,10 @@ source $ZSH/oh-my-zsh.sh
 source $DOTFILES/aliases
 source $DOTFILES/functions
 
+source $DOTFILES/misc/nvm
+
+source $DOTFILES/misc/prompt
+
 # Standard plugins can be found in $ZSH/plugins/
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
@@ -21,12 +25,6 @@ ZSH_THEME="agnoster"
 
 # use vi in the command line by default
 bindkey -v
-
-# This loads nvm
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" 
-
-# init starship prompt
-eval "$(starship init zsh)"
 
 
 # OTHER ZSH STUFF TO COME BACK TO IF YOU WANT :)
