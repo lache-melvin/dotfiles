@@ -1,0 +1,17 @@
+[directory]
+truncation_length = 8
+
+[git_commit]
+style="bold purple"
+
+[git_state]
+format = '[\($state( $progress_current/$progress_total)\)]($style) '
+
+[git_status]
+format = '(\[ [$all_status$ahead_behind]($style) \] )'
+modified = " ✱ "
+staged = '[+](bold green)'
+untracked = "[?](bold yellow)"
+ahead = "[⇡](white)"
+behind = "[⇣](white)"
+diverged = "[⇕](white)"

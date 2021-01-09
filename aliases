@@ -19,6 +19,8 @@ alias vim="nvim"
 alias aliases="v $DOTFILES/aliases"
 alias zshenv="v $DOTFILES/zsh/.zshenv"
 alias zshrc="v $DOTFILES/zsh/.zshrc"
+alias vimrc="v $DOTFILES/config/init.vim"
+alias starshipconf = "v $DOTFILES/config/starship.toml"
 
 # speedy terminalisation
 alias cl="clear && l"
