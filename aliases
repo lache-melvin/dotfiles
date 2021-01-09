@@ -17,6 +17,8 @@ alias vim="nvim"
 
 # open config files
 alias aliases="v $DOTFILES/aliases"
+alias zshenv="v $DOTFILES/zsh/.zshenv"
+alias zshrc="v $DOTFILES/zsh/.zshrc"
 
 # speedy terminalisation
 alias cl="clear && l"
