@@ -1,0 +1,9 @@
+# cd into dir; ls -al
+function cs () {
+  cd "$@" && l
+}
+
+# clone repo; cd into it; ls -al
+function c () {
+  git clone "$1" && cs "$(basename "$1" .git)"
+}
