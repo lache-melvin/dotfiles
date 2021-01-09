@@ -1,0 +1,14 @@
+#!/usr/bin/env sh
+
+# CHECK THIS PATH IS CORRECT FIRST! :)
+export DOTFILES=~/dotfiles
+
+# Remove existing links
+rm ~/.zshenv
+rm ~/.zshrc
+
+# Create symlinks
+ln -s $DOTFILES/zsh/.zshenv ~/.zshenv
+ln -s $DOTFILES/zsh/.zshrc ~/.zshrc
+
+echo "Successerino friendino!"
