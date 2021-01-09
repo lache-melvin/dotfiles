@@ -8,8 +8,15 @@ alias dbr="npm run knex migrate:latest && npm run knex seed:run"
 
 # git outta my way
 alias grs="git restore"
+alias grss"git restore"
 alias gll="git log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)'"
 alias glla="git log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all"
+
+# speedy terminalisation
+alias cl="clear && l"
+alias rr="rm -rf"
+alias d="cs dev"
+alias essh="eval 'ssh-agent' && ssh-add"
 
 # open NeoVim
 alias v="nvim"
@@ -22,9 +29,3 @@ alias zshenv="v $DOTFILES/zsh/.zshenv"
 alias zshrc="v $DOTFILES/zsh/.zshrc"
 alias vimrc="v $DOTFILES/config/init.vim"
 alias starshipconf="v $DOTFILES/config/starship.toml"
-
-# speedy terminalisation
-alias cl="clear && l"
-alias rr="rm -rf"
-alias d="cs dev"
-alias essh="eval 'ssh-agent' && ssh-add"
