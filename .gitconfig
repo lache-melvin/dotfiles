@@ -1,0 +1,14 @@
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[user]
+	name = Lache Melvin
+	email = lache.melvin@gmail.com
+[color]
+	ui = auto
+[merge]
+	conflictstyle = diff3
+[core]
+	editor = nvim

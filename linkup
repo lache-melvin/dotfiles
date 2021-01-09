@@ -4,10 +4,12 @@
 export DOTFILES=~/dotfiles
 
 # Remove existing links
+rm ~/.gitconfig
 rm ~/.zshenv
 rm ~/.zshrc
 
 # Create symlinks
+ln -s $DOTFILES/.gitconfig ~/.gitconfig
 ln -s $DOTFILES/zsh/.zshenv ~/.zshenv
 ln -s $DOTFILES/zsh/.zshrc ~/.zshrc
 
