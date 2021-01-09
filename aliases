@@ -17,6 +17,7 @@ alias vim="nvim"
 
 # open config files
 alias aliases="v $DOTFILES/aliases"
+alias zprofile="v $DOTFILES/zsh/.zprofile"
 alias zshenv="v $DOTFILES/zsh/.zshenv"
 alias zshrc="v $DOTFILES/zsh/.zshrc"
 alias vimrc="v $DOTFILES/config/init.vim"

@@ -1,0 +1,18 @@
+# sourced from $DOTFILES/zsh/.zprofile
+
+# our usual faves are added to $PATH from /etc/paths
+#
+# to add to $PATH for ALL users, add a file to /etc/paths.d containing the
+# path to be appended to $PATH
+# these paths are appended *in order*
+#
+# nvm currently prepends $HOME/.nvm/versions/node/v14.15.3/bin to path...
+# I'm going to leave this here while I decide how I feel about that ;)
+
+
+# User executable files
+export PATH=$PATH:$HOME/.local/bin
+
+# Postgres app
+export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin
+
