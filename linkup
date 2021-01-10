@@ -22,6 +22,9 @@ ln -s $DOTFILES/zsh/.zprofile ~/.zprofile
 ln -s $DOTFILES/zsh/.zshenv ~/.zshenv
 ln -s $DOTFILES/zsh/.zshrc ~/.zshrc
 
+# This is the dir for my NeoVim plugins, which is referenced in 
+# ./config/init.vim. Creating/checking it is there also ensures the
+# presence of the ./config dir and the nvim dir within that (winning!)
 mkdir -p ~/.config/nvim/plugged
 
 ln -s $DOTFILES/config/starship.toml ~/.config/starship.toml
