@@ -1,0 +1,8 @@
+#! /usr/bin/env sh
+
+npm i --global \
+  eda-repo-validator \
+  gatsby-cli \
+  git-iam \
+  npm-check-updates \
+  typescript
