@@ -8,10 +8,14 @@ style="bold purple"
 format = '[\($state( $progress_current/$progress_total)\)]($style) '
 
 [git_status]
-format = '(\[ [$all_status$ahead_behind]($style) \] )'
-modified = " ✱ "
-staged = '[+](bold green)'
-untracked = "[?](bold yellow)"
-ahead = "[⇡](white)"
-behind = "[⇣](white)"
-diverged = "[⇕](white)"
+format = '(\[ [$all_status]($style)$ahead_behind\] )'
+conflicted = '= '
+stashed = '[$](bold yellow) '
+deleted = 'x '
+renamed = '» '
+modified = "* "
+staged = '[+](bold green) '
+untracked = "[?](bold yellow) "
+ahead = "⇡ "
+behind = "⇣ "
+diverged = "⇕ "
