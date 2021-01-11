@@ -10,7 +10,7 @@ format = '[\($state( $progress_current/$progress_total)\)]($style) '
 [git_status]
 format = '(\[ [$all_status]($style)$ahead_behind\] )'
 conflicted = '= '
-stashed = '[$](bold yellow) '
+stashed = "[S](bold yellow) "
 deleted = 'x '
 renamed = '» '
 modified = "* "
