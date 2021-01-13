@@ -14,7 +14,8 @@ alias glla="git log --graph --abbrev-commit --decorate --format=format:'%C(bold 
 alias lt="tree -a -C -I 'node_modules|.git' --dirsfirst"
 alias cl="clear && l"
 alias rr="rm -rf"
-alias d="cs dev"
+alias d="cs ~/dev"
+alias dotfiles="cs $DOTFILES"
 alias essh="eval 'ssh-agent' && ssh-add"
 
 # open NeoVim
