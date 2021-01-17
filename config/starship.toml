@@ -19,3 +19,8 @@ untracked = "[?](bold yellow) "
 ahead = "⇡ "
 behind = "⇣ "
 diverged = "⇕ "
+
+[time]
+disabled = false
+style = "yellow"
+format = "[$time]($style)\n"
