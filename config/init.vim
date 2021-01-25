@@ -43,8 +43,8 @@ set background=dark
 
 let mapleader = ' '
 
-" Run macros easier (in q register)
-:nnoremap , @q
+" Run macros easier
+:nnoremap , @
 
 " Unhighlight previous search
 nnoremap <ESC> :noh<RETURN><ESC>
@@ -61,14 +61,29 @@ vnoremap <C-k> :m '<-2<CR>gv=gv
 nnoremap j gj
 nnoremap k gk
 
+" Make a 3-way toggle between no line numbers, absolute, and relative:
+ function! NumberToggle()
+   if(&rnu == 0 && &nu == 0)
+     set nu
+   elseif(&nu == 1)
+     set nonu
+     set rnu
+   else
+     set nornu
+   endif
+endfunc
+nnoremap <C-n> :call NumberToggle()<CR>
+
 " window navigation
 nnoremap <leader>h :wincmd h<CR>
 nnoremap <leader>j :wincmd j<CR>
 nnoremap <leader>k :wincmd k<CR>
 nnoremap <leader>l :wincmd l<CR>
+nnoremap <leader>p :wincmd p<CR>
 
 " Tab between buffers
 noremap <tab> :bn<CR>
+noremap <S-tab> :bp<CR>
 
 " Switch tabs
 nmap <leader>t :tabnew<CR>
@@ -93,6 +108,15 @@ set wildignore+=node_modules
 let g:NERDTreeWinSize = 40
 let g:NERDTreeShowHidden = 1
 map <C-t> :NERDTreeToggle<CR>
+map <leader>o :NERDTreeFocus<CR>
+
+" Open the existing NERDTree on each new tab.
+autocmd BufWinEnter * silent NERDTreeMirror
+
+" Open NERDTree if vim opened with no arguments
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists('s:std_in') | NERDTree | endif
+
 " Close Vim if NERDTree is the last window
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
