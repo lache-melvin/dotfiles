@@ -44,7 +44,10 @@ set background=dark
 let mapleader = ' '
 
 " Run macros easier
-:nnoremap , @
+" I usually record them in the q register
+:nnoremap , @q
+" Sometimes I record more but the @ is far away
+:nnoremap ' @
 
 " Unhighlight previous search
 nnoremap <ESC> :noh<RETURN><ESC>
