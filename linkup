@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 
 # CHECK THIS PATH IS CORRECT FIRST! :)
-export DOTFILES=~/dotfiles
+export DOTFILES=~/dev/dotfiles
 
 
 # Remove existing links
