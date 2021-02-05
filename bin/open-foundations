@@ -1,0 +1,160 @@
+#!/usr/bin/env sh
+
+# students.txt should look like this
+# ---
+# studentname github-username
+# lache lache-melvin
+# ---
+# (first name as you would like to refer to them, then their username (space separated))
+# (students separated by line)
+
+
+# You can either run `open-foundations lache` or `open-foundations lache 2` for a specific sprint
+
+
+STUDENTSDIR=~/dev/eda/students-foundations
+STUDENTS=$STUDENTSDIR/students.txt
+
+student=$1
+sprintNum=$2
+
+readStudents()
+{
+    while read -r line; do
+        IFS=' ' read -ra details <<< $line
+        if [ $student = ${details[0]} ]; then
+            setSelectedStudent ${details[1]}
+        fi
+    done < $STUDENTS
+}
+
+setSelectedStudent()
+{
+    username=$1
+    studentExists=1
+}
+
+openURLs()
+{
+    github="https://github.com/$username"
+    reflections="https://github.com/$username/reflections"
+    blog="https://$username.github.io"
+    blogSource="$github/$username.github.io"
+    sprintReflections="$reflections/blob/main/sprint-$sprintNum/my-reflections-sprint-$sprintNum.md"
+    sprintEndReflections="$reflections/blob/main/sprint-$sprintNum/end-of-sprint-$sprintNum.md"
+    sprintBlogTech="$blog/blog/sprint$sprintNum-technical.html"
+    sprintBlogCore="$blog/blog/sprint$sprintNum-cultural.html"
+    koWaiKoe="https://github.com/dev-academy-foundations/ko-wai-koe/commits?author=$username"
+    domClasses="$github/DOM-applying-classes"
+    domInteractions="$github/DOM-interactions"
+    zenGarden="$github/zen-garden"
+    minesweeper="$github/minesweeper"
+    carnival="$github/carnival"
+
+    if [ $sprintNum = 1 ]; then
+        URLs=( $blogSource $blog $koWaiKoe $sprintEndReflections $sprintReflections )
+    elif [ $sprintNum = 2 ]; then
+        URLs=( $blogSource $blog $sprintBlogCore $sprintBlogTech $sprintEndReflections $sprintReflections )
+    elif [ $sprintNum = 3 ]; then
+        URLs=( $blogSource $blog $sprintBlogCore $sprintBlogTech $domInteractions $domClasses $sprintEndReflections $sprintReflections )
+    elif [ $sprintNum = 4 ]; then
+        URLs=( $blogSource $blog $sprintBlogCore $sprintBlogTech $zenGarden $sprintEndReflections $sprintReflections )
+    elif [ $sprintNum = 5 ]; then
+        URLs=( $blogSource $blog $sprintBlogCore $sprintBlogTech $sprintEndReflections $sprintReflections )
+    else
+        URLs=( $github $blog $reflections )
+    fi
+
+    for i in ${URLs[@]}
+    do
+        open $i
+    done
+}
+
+cloneAndOpenCode()
+{
+    cloningURL="git@github.com:$username"
+
+    if [ ! -d $STUDENTSDIR/$student ]; then
+        mkdir $STUDENTSDIR/$student
+    fi
+
+    if [ $sprintNum = 3 ]; then
+        cd $STUDENTSDIR/$student
+        if [ ! -d $STUDENTSDIR/$student/DOM-applying-classes ]; then
+            git clone $cloningURL/DOM-applying-classes.git
+            cd DOM-applying-classes
+        else
+            cd DOM-applying-classes
+            git pull
+        fi
+        open index.html
+
+        cd $STUDENTSDIR/$student
+        if [ ! -d $STUDENTSDIR/$student/DOM-interactions ]; then
+            git clone $cloningURL/DOM-interactions.git
+            cd DOM-interactions
+        else
+            cd DOM-interactions
+            git pull
+        fi
+        open index.html
+
+    elif [ $sprintNum = 5 ]; then
+        cd $STUDENTSDIR/$student
+        if [ ! -d $STUDENTSDIR/$student/minesweeper ]; then
+            git clone $cloningURL/minesweeper.git
+            cd minesweeper
+        else
+            cd minesweeper
+            git pull
+        fi
+        open index.html
+
+        cd $STUDENTSDIR/$student
+        if [ ! -d $STUDENTSDIR/$student/javascript-carnival ]; then
+            git clone $cloningURL/javascript-carnival.git
+            cd javascript-carnival
+        else
+            cd javascript-carnival
+            git pull
+        fi
+        open dress-the-clown/dress-the-clown.html
+        open whack-a-mole/whack-a-mole.html
+        open inflate-the-unicorn/inflate-the-unicorn.html
+    fi
+}
+
+otherChecks()
+{
+    echo "ALSO:"
+    if [ $sprintNum = 1 ]; then
+        echo "- Their introduction in Slack"
+    elif [ $sprintNum = 2 ]; then
+        echo "- The S1 Blog posts"
+    elif [ $sprintNum = 4 ]; then
+        echo "- Their repl.it"
+    fi
+    echo "- The feedback spreadsheet :)"
+}
+
+
+# ------------- EXECUTION ---------------
+
+readStudents
+
+if [ ! $studentExists ]; then
+    echo "Whoops, that student doesn't exist!"
+    exit 0
+fi
+
+if [ ! $sprintNum ]; then
+   sprintNum=0
+fi
+
+openURLs
+
+cloneAndOpenCode
+
+otherChecks
+

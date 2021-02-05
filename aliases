@@ -18,6 +18,7 @@ alias d="cs ~/dev"
 alias e="cs ~/dev/eda"
 alias dotfiles="cs $DOTFILES"
 alias essh="eval 'ssh-agent' && ssh-add"
+alias f="open-foundations"
 
 # open NeoVim
 alias v="nvim"

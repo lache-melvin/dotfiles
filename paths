@@ -13,6 +13,8 @@
 # User executable files
 export PATH=$PATH:$HOME/.local/bin
 
+export PATH=$PATH:$DOTFILES/bin
+
 # Postgres app
 export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin
 
