@@ -9,9 +9,11 @@ Plug 'mattn/emmet-vim'
 Plug 'morhetz/gruvbox'
 Plug 'preservim/nerdcommenter'
 Plug 'preservim/nerdtree'
+Plug 'Quramy/tsuquyomi'
 Plug 'sbdchd/neoformat'
 Plug 'sheerun/vim-polyglot'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'Shougo/vimproc.vim', {'do' : 'make'}
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'Xuyuanp/nerdtree-git-plugin'
@@ -46,8 +48,6 @@ let mapleader = ' '
 " Run macros easier
 " I usually record them in the q register
 :nnoremap , @q
-" Sometimes I record more but the @ is far away
-:nnoremap ' @
 
 " Unhighlight previous search
 nnoremap <ESC> :noh<RETURN><ESC>
@@ -61,8 +61,9 @@ vnoremap <C-j> :m '>+1<CR>gv=gv
 vnoremap <C-k> :m '<-2<CR>gv=gv
 
 " Intuitive movement on wrapped lines
-nnoremap j gj
-nnoremap k gk
+" (only in markdown files)
+autocmd FileType markdown nnoremap <buffer> j gj
+autocmd FileType markdown nnoremap <buffer> k gk
 
 " Make a 3-way toggle between no line numbers, absolute, and relative:
  function! NumberToggle()
@@ -97,8 +98,6 @@ nmap <S-h> :tabprevious<CR>
 noremap <leader><Left> :tabmove -1<CR>
 noremap <leader><Right> :tabmove +1<CR>
 
-nnoremap <leader>ff :Neoformat<CR>
-
 " Deoplete
 let g:deoplete#enable_at_startup = 1
 
@@ -128,9 +127,25 @@ let g:NERDSpaceDelims = 1
 let g:NERDDefaultAlign = 'left'
 
 " ALE
-let g:ale_linters = {'javascript': ['eslint']}
-let g:ale_fixers = {'javascript': ['prettier', 'eslint'], 'jsx': ['prettier', 'eslint'], 'markdown': ['prettier']}
+let g:ale_linters = {'javascript': ['eslint'], 'typescript': ['eslint']}
+let g:ale_fixers = {'javascript': ['prettier', 'eslint'], 'jsx': ['prettier', 'eslint'], 'markdown': ['prettier'], 'typescript': ['prettier', 'eslint']}
 let g:ale_fix_on_save = 1
+
+" This doesn't work in TSX if I fix the auto-fixing (below)...
+nmap ; <Plug>(ale_hover)
+
+" Make jsx filetypes more usable for plugins (Specifically ALE fixing)
+autocmd BufRead,BufNewFile *.jsx set filetype=javascript.jsx
+" autocmd BufRead,BufNewFile *.tsx set filetype=typescript.tsx
+
+
+" Tsuquyomi (typescript)
+let g:tsuquyomi_disable_quickfix = 1
+let g:tsuquyomi_disable_default_mappings = 1
+let g:tsuquyomi_javascript_support = 1
+nmap <S-t> <Plug>(TsuquyomiDefinition)
+nmap <S-x> <Plug>(TsuquyomiTypeDefinition)
+nmap <S-b> <Plug>(TsuquyomiGoBack)
 
 " Open and source Neovim config from inside Neovim
 command! Config :e ~/.config/nvim/init.vim
