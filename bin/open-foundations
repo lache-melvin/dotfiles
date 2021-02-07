@@ -1,5 +1,7 @@
 #!/usr/bin/env sh
 
+# Shoutout to @rose-mead for the inspiration! (https://github.com/rose-mead/scripts)
+
 # students.txt should look like this
 # ---
 # studentname github-username
@@ -53,14 +55,22 @@ openURLs()
 
     if [ $sprintNum = 1 ]; then
         URLs=( $blogSource $blog $koWaiKoe $sprintEndReflections $sprintReflections )
+
     elif [ $sprintNum = 2 ]; then
-        URLs=( $blogSource $blog $sprintBlogCore $sprintBlogTech $sprintEndReflections $sprintReflections )
+        # need to review these in S2, as blog isn't done in S1
+        sprint1BlogTech="$blog/blog/sprint1-technical.html"
+        sprint1BlogCore="$blog/blog/sprint1-cultural.html"
+        URLs=( $blogSource $blog $sprintBlogCore $sprintBlogTech $sprint1BlogCore $sprint1BlogTech $sprintEndReflections $sprintReflections )
+
     elif [ $sprintNum = 3 ]; then
         URLs=( $blogSource $blog $sprintBlogCore $sprintBlogTech $domInteractions $domClasses $sprintEndReflections $sprintReflections )
+
     elif [ $sprintNum = 4 ]; then
         URLs=( $blogSource $blog $sprintBlogCore $sprintBlogTech $zenGarden $sprintEndReflections $sprintReflections )
+
     elif [ $sprintNum = 5 ]; then
         URLs=( $blogSource $blog $sprintBlogCore $sprintBlogTech $sprintEndReflections $sprintReflections )
+
     else
         URLs=( $github $blog $reflections )
     fi
@@ -130,8 +140,6 @@ otherChecks()
     echo "ALSO:"
     if [ $sprintNum = 1 ]; then
         echo "- Their introduction in Slack"
-    elif [ $sprintNum = 2 ]; then
-        echo "- The S1 Blog posts"
     elif [ $sprintNum = 4 ]; then
         echo "- Their repl.it"
     fi
