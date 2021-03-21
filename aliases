@@ -20,6 +20,9 @@ alias dotfiles="cs $DOTFILES"
 alias essh="eval 'ssh-agent' && ssh-add"
 alias f="open-foundations"
 
+# docker
+alias dc="docker-compose"
+
 # open NeoVim
 alias v="nvim"
 alias vim="nvim"
