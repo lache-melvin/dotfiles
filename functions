@@ -1,9 +1,25 @@
 # cd into dir; ls -al
 function cs () {
-  cd "$@" && l
+  cd "$@";
+  l
 }
 
-# clone repo; cd into it; ls -al
+# clone repo; cd into it; ls -al;
+# TODO: add $2 to rename cloning folder
+# TODO: cd into the $2 if exists
 function c () {
-  git clone "$1" && cs "$(basename "$1" .git)"
+  git clone "$1";
+  cd "$(basename "$1" .git)";
+  l
+}
+
+# clone repo; cd into it; ls -al; install deps
+# TODO: add $2 to rename cloning folder
+# TODO: cd into the $2 if exists
+# TODO: only install deps if there's a package.json
+function ci () {
+  git clone "$1";
+  cd "$(basename "$1" .git)";
+  npm install;
+  l
 }
