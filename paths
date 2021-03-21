@@ -13,8 +13,11 @@
 # User executable files
 export PATH=$PATH:$HOME/.local/bin
 
+# Dotfiles
 export PATH=$PATH:$DOTFILES/bin
+
+# Rust
+export PATH=$PATH:$HOME/.cargo/bin
 
 # Postgres app
 export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin
-
