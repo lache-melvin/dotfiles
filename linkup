@@ -10,6 +10,7 @@ rm ~/.gitconfig
 rm ~/.zprofile
 rm ~/.zshenv
 rm ~/.zshrc
+rm ~/.tmux.conf
 
 rm ~/.config/starship.toml
 rm ~/.config/nvim/init.vim
@@ -17,7 +18,8 @@ rm ~/.config/nvim/init.vim
 
 # Create symlinks
 
-ln -s $DOTFILES/.gitconfig ~/.gitconfig
+ln -s $DOTFILES/config/.gitconfig ~/.gitconfig
+ln -s $DOTFILES/config/tmux.conf ~/.tmux.conf
 ln -s $DOTFILES/zsh/.zprofile ~/.zprofile
 ln -s $DOTFILES/zsh/.zshenv ~/.zshenv
 ln -s $DOTFILES/zsh/.zshrc ~/.zshrc
