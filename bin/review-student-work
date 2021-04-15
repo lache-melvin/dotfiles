@@ -1,0 +1,32 @@
+#! /usr/bin/env node
+
+const fs = require('fs')
+const path = require('path')
+const { exec } = require('child_process')
+
+const WORK_DIR = `${process.env.HOME}/dev/eda`
+
+const repo = process.argv[2]
+
+const cohort = repo.split(':')[1].split('/')[0]
+const repoName = repo.split('/')[1].slice(0, -4)
+
+const cohortDir = `${WORK_DIR}/${cohort}`
+const repoDir = `${cohortDir}/${repoName}`
+
+function cohortExists () {
+  const edaDirs = fs.readdirSync(`${WORK_DIR}`)
+  const cohortDirExists = edaDirs.includes(cohort)
+}
+
+function repoExists () {
+  const reposInDir = fs.readdirSync(`${WORK_DIR}/${cohort}`)
+  return reposInDir.includes(repoName)
+}
+
+!cohortExists() && fs.mkdirSync(cohortDir)
+
+!repoExists
+
+process.chdir(`${WORK_DIR}/${cohort}/${repoName}`)
+console.log(process.cwd())

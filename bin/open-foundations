@@ -46,7 +46,7 @@ openURLs()
     sprintEndReflections="$reflections/blob/main/sprint-$sprintNum/end-of-sprint-$sprintNum.md"
     sprintBlogTech="$blog/blog/sprint$sprintNum-technical.html"
     sprintBlogCore="$blog/blog/sprint$sprintNum-cultural.html"
-    koWaiKoe="https://github.com/dev-academy-foundations/ko-wai-koe/commits?author=$username"
+    koWaiKoe="https://github.com/dev-academy-foundations/ko-wai-koe/pulls?q=is%3Apr+author%3A$username"
     domClasses="$github/DOM-applying-classes"
     domInteractions="$github/DOM-interactions"
     zenGarden="$github/zen-garden"
