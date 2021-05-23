@@ -39,6 +39,7 @@ set ignorecase
 set smartcase
 set hlsearch
 set incsearch
+set completeopt-=preview " Turn off scratch preview
 
 colorscheme gruvbox
 set background=dark
@@ -128,7 +129,7 @@ let g:NERDDefaultAlign = 'left'
 
 " ALE
 let g:ale_linters = {'javascript': ['eslint'], 'typescript': ['eslint']}
-let g:ale_fixers = {'javascript': ['prettier', 'eslint'], 'jsx': ['prettier', 'eslint'], 'markdown': ['prettier'], 'typescript': ['prettier', 'eslint']}
+let g:ale_fixers = {'javascript': ['prettier', 'eslint'], 'jsx': ['prettier', 'eslint'], 'markdown': ['prettier'], 'typescript': ['prettier', 'eslint'], 'tsx': ['prettier', 'eslint']}
 let g:ale_fix_on_save = 1
 
 " This doesn't work in TSX if I fix the auto-fixing (below)...
@@ -136,7 +137,7 @@ nmap ; <Plug>(ale_hover)
 
 " Make jsx filetypes more usable for plugins (Specifically ALE fixing)
 autocmd BufRead,BufNewFile *.jsx set filetype=javascript.jsx
-" autocmd BufRead,BufNewFile *.tsx set filetype=typescript.tsx
+autocmd BufRead,BufNewFile *.tsx set filetype=typescript.tsx
 
 
 " Tsuquyomi (typescript)
