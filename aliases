@@ -1,5 +1,6 @@
 # npm script shortcuts
 alias t="npm test"
+alias tw="npm run test:watch"
 alias nr="npm run"
 alias nrd="npm run dev"
 alias nrl="npm run lint"
