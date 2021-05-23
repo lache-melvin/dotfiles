@@ -11,15 +11,19 @@ rm ~/.zprofile
 rm ~/.zshenv
 rm ~/.zshrc
 rm ~/.tmux.conf
+rm ~/.Xmodmap
 
 rm ~/.config/starship.toml
 rm ~/.config/nvim/init.vim
+rm ~/.config/i3/config
+rm ~/.config/i3status/config
 
 
 # Create symlinks
 
 ln -s $DOTFILES/config/.gitconfig ~/.gitconfig
 ln -s $DOTFILES/config/tmux.conf ~/.tmux.conf
+ln -s $DOTFILES/misc/.Xmodmap ~/.Xmodmap
 ln -s $DOTFILES/zsh/.zprofile ~/.zprofile
 ln -s $DOTFILES/zsh/.zshenv ~/.zshenv
 ln -s $DOTFILES/zsh/.zshrc ~/.zshrc
@@ -31,6 +35,10 @@ mkdir -p ~/.config/nvim/plugged
 
 ln -s $DOTFILES/config/starship.toml ~/.config/starship.toml
 ln -s $DOTFILES/config/init.vim ~/.config/nvim/init.vim
+
+# LINUX ONLY
+ln -s $DOTFILES/config/i3.config ~/.config/i3/config
+ln -s $DOTFILES/config/i3status.config ~/.config/i3status/config
 
 
 echo "Successerino friendino!"

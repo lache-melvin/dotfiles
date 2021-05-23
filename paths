@@ -1,6 +1,6 @@
 # sourced from $DOTFILES/zsh/.zprofile
 
-# our usual faves are added to $PATH from /etc/paths
+# our usual faves are added to $PATH from /etc/paths (MAC)
 #
 # to add to $PATH for ALL users, add a file to /etc/paths.d containing the
 # path to be appended to $PATH
@@ -19,5 +19,5 @@ export PATH=$PATH:$DOTFILES/bin
 # Rust
 export PATH=$PATH:$HOME/.cargo/bin
 
-# Postgres app
+# MAC ONLY || Postgres app
 export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin

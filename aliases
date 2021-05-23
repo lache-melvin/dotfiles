@@ -20,6 +20,10 @@ alias dotfiles="cs $DOTFILES"
 alias essh="eval 'ssh-agent' && ssh-add"
 alias f="open-foundations"
 
+# LINUX ONLY
+alias fixin="xmodmap ~/.Xmodmap" # fixing inputs
+alias sl="~/.config/i3/scripts/blur-lock.sh"
+
 # docker
 alias dc="docker-compose"
 
