@@ -5,10 +5,6 @@
 # to add to $PATH for ALL users, add a file to /etc/paths.d containing the
 # path to be appended to $PATH
 # these paths are appended *in order*
-#
-# nvm currently prepends $HOME/.nvm/versions/node/v14.15.3/bin to path...
-# I'm going to leave this here while I decide how I feel about that ;)
-
 
 # User executable files
 export PATH=$PATH:$HOME/.local/bin
@@ -20,4 +16,6 @@ export PATH=$PATH:$DOTFILES/bin
 export PATH=$PATH:$HOME/.cargo/bin
 
 # MAC ONLY || Postgres app
-export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin
+# export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin
+
+export PATH=$PATH:/opt/homebrew/bin

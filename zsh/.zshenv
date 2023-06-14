@@ -1,6 +1,6 @@
 # MAC
-export ZSH="/Users/lachemelvin2/.oh-my-zsh"
-export DOTFILES="/Users/lachemelvin2/dev/dotfiles"
+export ZSH="/Users/lache/.oh-my-zsh"
+export DOTFILES="/Users/lache/dev/dotfiles"
 #
 # LINUX
 # export ZSH="/home/lache/.oh-my-zsh"
@@ -11,4 +11,4 @@ export VISUAL="nvim"
 export EDITOR="nvim"
 
 # MAC
-if [ -e /Users/lachemelvin2/.nix-profile/etc/profile.d/nix.sh ]; then . /Users/lachemelvin2/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
+if [ -e /Users/lache/.nix-profile/etc/profile.d/nix.sh ]; then . /Users/lache/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
