@@ -4,14 +4,15 @@
 	process = git-lfs filter-process
 	required = true
 [user]
-	name = Lache Melvin
-	email = lache.melvin@gmail.com
+	name = Laché Melvin
+	email = 55115239+lache-melvin@users.noreply.github.com
 [color]
 	ui = auto
 [merge]
 	conflictstyle = diff3
 [core]
 	editor = nvim
+  ignorecase = false
 [credential]
 	helper = cache
 [pull]

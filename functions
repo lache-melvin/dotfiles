@@ -23,3 +23,24 @@ function ci () {
   npm install;
   l
 }
+
+function ghc () {
+  CURRENT_BRANCH=$(git rev-parse --abbrev-ref HEAD)
+# Replace every character that is not letter or number with dash
+  COMMIT_MESSAGE="$@"
+  SANITISED_COMMIT=$(echo $COMMIT_MESSAGE | sed -E 's/[^a-zA-Z0-9]/\-/g')
+  NEW_BRANCH="$CURRENT_BRANCH($SANITISED_COMMIT)"
+
+  git checkout -b $NEW_BRANCH
+  git add -A 
+  git commit -n -m "$COMMIT_MESSAGE"
+  git push --set-upstream origin $NEW_BRANCH
+  git checkout $CURRENT_BRANCH
+
+# https://github.com/{org}/{repo}.git
+  REPO_URL_NAME=$(git remote get-url origin | sed -E 's|git@github.com:|https://github.com/|g')
+# Remove .get
+  SANITISED_URL=$(echo $REPO_URL_NAME | sed -E 's/(\.git)//g')
+  open "$SANITISED_URL/compare/$CURRENT_BRANCH...$NEW_BRANCH"
+}
+

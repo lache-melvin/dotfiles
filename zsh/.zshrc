@@ -26,6 +26,8 @@ ZSH_THEME="agnoster"
 # use vi in the command line by default
 bindkey -v
 
+ulimit -n 10240
+
 
 # OTHER ZSH STUFF TO COME BACK TO IF YOU WANT :)
 
