@@ -26,7 +26,6 @@ cd dotfiles
 You're going to need to install oh-my-zsh, [vim-plug](https://github.com/junegunn/vim-plug) and [nvm](https://github.com/nvm-sh/nvm#installing-and-updating) yourself.
 
 ## npmig
-> cute idea [@don-smith](https://github.com/don-smith)
 
 Running the `./npmig` script will install the global npm packages I'm currently using (I endeavour to keep this up to date)
 
