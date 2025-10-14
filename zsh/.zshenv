@@ -7,6 +7,6 @@ export DOTFILES="/Users/lachemelcin/dev/dotfiles"
 # export DOTFILES="/home/lache/dev/dotfiles"
 
 export LANG=en_NZ.UTF-8
-export VISUAL="nvim"
-export EDITOR="nvim"
+export VISUAL="vim"
+export EDITOR="vim"
 

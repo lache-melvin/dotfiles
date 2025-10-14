@@ -11,7 +11,7 @@
 [merge]
 	conflictstyle = diff3
 [core]
-	editor = nvim
+	editor = vim
   ignorecase = false
 [credential]
 	helper = cache
