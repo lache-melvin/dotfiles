@@ -25,8 +25,8 @@ alias sl="~/.config/i3/scripts/blur-lock.sh"
 alias dc="docker-compose"
 
 # TODO: set up NeoVim?
-# alias v="nvim"
 # alias vim="nvim"
+alias v="vim"
 
 # open config files
 alias aliases="v $DOTFILES/aliases"
