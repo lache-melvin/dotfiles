@@ -33,3 +33,6 @@ alias aliases="v $DOTFILES/aliases"
 
 # Halter
 alias h="cs ~/halter"
+alias co="cursor"
+alias token="/Users/lachemelcin/dev/dotfiles/misc/get_token.sh"
+
